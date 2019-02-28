@@ -8,6 +8,7 @@ import { mount, render, shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import { wrap } from 'module';
 import { MemoryRouter } from 'react-router-dom';
+import store from '../../src/stores/groceryStore'
 
 
 configure({ adapter: new Adapter() });
@@ -15,22 +16,27 @@ configure({ adapter: new Adapter() });
 describe("exercise1", () => {
     it('Application should render without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<MemoryRouter><App /></MemoryRouter>, div);
+        ReactDOM.render(<App store ={store} />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
+//     it('Application should render without crashing', () => {
+//         const div = document.createElement('div');
+//         ReactDOM.render(<MemoryRouter><App /></MemoryRouter>, div);
+//         ReactDOM.unmountComponentAtNode(div);
+//       });
       
-      it('Wizards link should route to Wizard directory', () => {
-          const wrapper = render(<MemoryRouter><Home /></MemoryRouter>);
-          // TODO: add a smarter validation for other types of html hierarchy..
-          let wizardsLink = wrapper.find('#wizards').find('span').closest("a");
-          expect(wizardsLink.prop('href')).toEqual('/directory/wizards');
-      });
+//       it('Wizards link should route to Wizard directory', () => {
+//           const wrapper = render(<MemoryRouter><Home /></MemoryRouter>);
+//           // TODO: add a smarter validation for other types of html hierarchy..
+//           let wizardsLink = wrapper.find('#wizards').find('span').closest("a");
+//           expect(wizardsLink.prop('href')).toEqual('/directory/wizards');
+//       });
       
-      it('Bestiary link should route to Bestiary directory', () => {
-          const wrapper = render(<MemoryRouter><Home /></MemoryRouter>);
-          let bestiaryLink = wrapper.find('#bestiary').find('span').closest("a");
-          expect(bestiaryLink.prop('href')).toEqual('/directory/bestiary');
-      });
+//       it('Bestiary link should route to Bestiary directory', () => {
+//           const wrapper = render(<MemoryRouter><Home /></MemoryRouter>);
+//           let bestiaryLink = wrapper.find('#bestiary').find('span').closest("a");
+//           expect(bestiaryLink.prop('href')).toEqual('/directory/bestiary');
+//       });
 })
 
 
