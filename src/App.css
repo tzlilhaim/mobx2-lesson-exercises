@@ -5,7 +5,7 @@
 }
 
 *{
-    text-decoration: none;
+    /* text-decoration: none; */
     font-family: 'Cinzel Decorative'
 }
 
@@ -26,4 +26,7 @@ a{
     top: 0;
     left: 0;
     z-index: -1;
+}
+.crossed {
+    text-decoration: line-through
 }

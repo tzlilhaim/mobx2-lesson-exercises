@@ -19,18 +19,12 @@ describe("exercise1", () => {
         ReactDOM.render(<App store ={store} />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-//     it('Application should render without crashing', () => {
-//         const div = document.createElement('div');
-//         ReactDOM.render(<MemoryRouter><App /></MemoryRouter>, div);
-//         ReactDOM.unmountComponentAtNode(div);
-//       });
       
-//       it('Wizards link should route to Wizard directory', () => {
-//           const wrapper = render(<MemoryRouter><Home /></MemoryRouter>);
-//           // TODO: add a smarter validation for other types of html hierarchy..
-//           let wizardsLink = wrapper.find('#wizards').find('span').closest("a");
-//           expect(wizardsLink.prop('href')).toEqual('/directory/wizards');
-//       });
+    it('App is reading the mobx store list property', () => {
+        const wrapper = mount(<App store ={store}/>);
+        console.log(wrapper.props)
+        expect(wrapper.props().store.list).toBeDefined();
+    });
       
 //       it('Bestiary link should route to Bestiary directory', () => {
 //           const wrapper = render(<MemoryRouter><Home /></MemoryRouter>);
