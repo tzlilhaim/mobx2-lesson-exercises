@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import assert from 'assert';
+import assert, { notDeepEqual } from 'assert';
 import App from '../../src/App';
 import renderer from 'react-test-renderer';
 import { mount, render, shallow, configure} from 'enzyme';
@@ -16,17 +16,22 @@ describe("exercise1", () => {
         ReactDOM.render(<App store ={store} />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-    it ('store should have a checkItem function that changes the price of a given item', () => {
-        const changePrice = store.checkItem
+    it ('store should have a checkItem function that updates a given items completed property', () => {
+        const checkItem = store.checkItem
         store.list.push({name: "test", completed: false})
-        changePrice("test")
+        checkItem("test")
         const test = store.list.find(i => i.name === "test")
         expect(test.completed, 'checkItem should change the completed value of a specified item').toBeTruthy()
     })
-    // it ('checkItem function should be an action')
+    it ('checkItem function should be a MobX action', () => {
+        const checkItem = store.checkItem
+        expect(checkItem.isMobxAction).toBeTruthy()
+    })
+    it ('Your input should have an onClick which invokes the checkItem function', () => {
+        const wrapper = mount(<App store ={store}/>)
+        let selected = wrapper.find(".listItem").first().parent('div').hasClass("crossed")
+        wrapper.find('.listItem').first().simulate('click')
+        expect(wrapper.find(".listItem").first().parent('div').hasClass("crossed")).toBe(!selected)
+    })
 
-    //check the function works
-    //check that it's an @action
-    //check function runs on click
-    //check display changed (class change)
 })
