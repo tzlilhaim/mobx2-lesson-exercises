@@ -11,13 +11,15 @@ class App extends Component {
     return (
       <div className="App">
         {this.props.store.list.map((i,ind) => {
-          return <div class = {i.completed ? "crossed": null}
+          return <div className = {i.completed ? "crossed": null}
                       key={ind}>
-                 <input type="checkbox"
-                        class = "listItem"
+                    <input type="checkbox"
+                        className = "listItem"
                         onClick = {this.checkItem} 
                         value={i.name}/> 
-                        {i.name}</div>
+                        {i.name} - 
+                        <span className="location">{i.location}</span>
+                  </div>
                 }
           )}
           <div id="home-background"></div>
