@@ -29,7 +29,8 @@ class App extends Component {
                         <button onClick = {this.editItem}
                                 className = "editButton">Edit</button>
                         <button onClick = {this.deleteItem}
-                                className = "deleteButton">Delete</button>
+                                className = "deleteButton"
+                                value = {i.name}>Delete</button>
                   </div>
                 }
           )}
