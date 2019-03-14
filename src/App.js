@@ -7,6 +7,13 @@ class App extends Component {
   checkItem = (e) => {
     this.props.store.checkItem(e.target.value)
   }
+  editItem = (e) => {
+    let newLocation = prompt("Edit location")
+    this.props.store.editItem(e.target.value, newLocation)
+  }
+  deleteItem = (e) => {
+    this.props.store.deleteItem(e.target.value)
+  }
   render() {
     return (
       <div className="App">
@@ -19,6 +26,10 @@ class App extends Component {
                         value={i.name}/> 
                         {i.name} - 
                         <span className="location">{i.location}</span>
+                        <button onClick = {this.editItem}
+                                className = "editButton">Edit</button>
+                        <button onClick = {this.deleteItem}
+                                className = "deleteButton">Delete</button>
                   </div>
                 }
           )}
