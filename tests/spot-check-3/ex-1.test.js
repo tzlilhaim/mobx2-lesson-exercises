@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import assert, { notDeepEqual } from 'assert';
 import App from '../../src/App';
-import renderer from 'react-test-renderer';
 import { mount, render, shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import { wrap } from 'module';
 import store from '../../src/stores/groceryStore'
 
 configure({ adapter: new Adapter() });
