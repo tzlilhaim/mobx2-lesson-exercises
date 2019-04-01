@@ -11,11 +11,13 @@ class Restaurant extends Component{
             <div>
                 <span>You have {this.props.RestaurantStore.openTables} open tables</span>
                 {/* Add in # of people in restaurant */}
-                {/* Add in # of completed tables */}
+                {/* Add in # of completed tables with id "completedTables*/}
                 <ResInput/>
-                <button>Add Reservation</button> 
+                <button id="addRes">Add Reservation</button> 
                 {/* Make the Add Reservation button work */}
+                <div class = "reservations">
                 {/* Map reservation data to Reservation components here */}
+                </div>
             </div>
         )
     }

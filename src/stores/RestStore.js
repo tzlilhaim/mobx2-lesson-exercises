@@ -1,6 +1,6 @@
 import { observable, computed, action } from  'mobx'
 
-class Res {
+export class Res {
     @observable name
     @observable id = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) 
     //giving a random short string ID
@@ -12,7 +12,7 @@ class Res {
     }
 }
 
-class RestaurantStore {
+export class RestaurantStore {
     @observable reservations = []
     @observable numTables = 10
     @computed get totalReservations() {
@@ -38,7 +38,3 @@ class RestaurantStore {
         //e.g. strike through our a different color - this will happen on your react, not here.
     }
 }
-const HaAchim = new RestaurantStore()
-HaAchim.addRes("Bernard", 4)
-
-export default HaAchim
