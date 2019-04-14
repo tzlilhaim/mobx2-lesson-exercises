@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'mobx-react'
 import {GeneralStore as generalStore} from './stores/GeneralStore'
-import {RestaurantStore as restaurantStore} from './stores/RestStore'
+import {RestaurantStore as restaurantStore} from './stores/RestaurantStore'
 
 const GeneralStore = new generalStore()
 const RestaurantStore = new restaurantStore()
