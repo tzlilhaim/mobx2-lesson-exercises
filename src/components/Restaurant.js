@@ -15,7 +15,7 @@ class Restaurant extends Component{
                 <ResInput/>
                 <button id="addRes">Add Reservation</button> 
                 {/* Make the Add Reservation button work */}
-                <div class = "reservations">
+                <div className = "reservations">
                 {/* Map reservation data to Reservation components here */}
                 </div>
             </div>
