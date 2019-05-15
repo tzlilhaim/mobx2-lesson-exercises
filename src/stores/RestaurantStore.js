@@ -5,7 +5,7 @@ import {Reservation} from './ReservationStore'
 export class RestaurantStore {
     @observable reservations = []
     @observable numTables = 10
-    @computed get totalReservations() {
+    @computed get totalReservations() { //automatically calculates the total reservations
         return this.reservations.length
     } 
     @computed get openTables() { //automatically caluclates the number of tables avalible, only when the state is affected
