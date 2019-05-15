@@ -37,6 +37,7 @@
     "jest-runtime": "^24.1.0",
     "mobx": "^5.9.0",
     "mobx-react": "^5.4.3",
+    "mobx-react-devtools": "^6.1.1",
     "object-assign": "4.1.1",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
@@ -61,7 +62,8 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^24.1.0",
-    "jest-expect-message": "^1.0.0",
+    "jest-expect-message": "git+https://github.com/Elevationacademy/jest-expect-message.git",
+    "jest-test-runner": "git+https://github.com/Elevationacademy/jest-test-runner.git",
     "jest-transform-stub": "^1.0.0",
     "react-test-renderer": "^16.4.2"
   },
@@ -69,7 +71,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "test-silent": "jest || exit 0"
+    "test-silent": "jest || exit 0",
+    "tests": "tests"
   },
   "jest": {
     "collectCoverageFrom": [
