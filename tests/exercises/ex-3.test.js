@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() });
 let restaurantStore;
 let newRes;
 
-describe("exercise 3", () => {
+describe("exercise3", () => {
     beforeEach(() => {
         newRes = new Res("Hunter", 3)
         newRes.completed = true

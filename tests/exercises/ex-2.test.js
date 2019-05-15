@@ -13,7 +13,7 @@ let restaurantStore;
 let generalStore;
 let newRes;
 
-describe("exercise 2", () => {
+describe("exercise2", () => {
     beforeEach(() => {
         newRes = new Res("Hunter", 3)
         restaurantStore = new RestaurantStore()
