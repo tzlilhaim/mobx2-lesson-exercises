@@ -22,4 +22,5 @@ describe("exercise3", () => {
             'each completed reservation should be conditionally rendered with the class "conditional"')
             .toBeTruthy()
     })
+    
 })
