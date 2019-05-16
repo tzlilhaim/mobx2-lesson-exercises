@@ -21,7 +21,7 @@ describe("exercise1", () => {
             .toBeTruthy()
         restaurantStore.addRes("Gerald", 2)
         restaurantStore.addRes("Lerald", 2)
-        restaurantStore.find(r => r.name === "Lerald").completed = true
+        restaurantStore.reservations.find(r => r.name === "Lerald").completed = true
         expect(restaurantStore.restPopulation, 
             "the restPopulation property should count the total number of people in the restaurant")
             .toBe(restPopulation + 2)
