@@ -56,4 +56,3 @@ describe("exercise1", () => {
             .toBe(completedTablesCount+1)
     })
 })
-
