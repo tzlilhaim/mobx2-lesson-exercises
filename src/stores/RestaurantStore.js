@@ -15,12 +15,16 @@ export class RestaurantStore {
     }
     @computed get restPopulation() {
         // calculate the number of people in the restaurant now
+        // (e.g. total number of people who are seated, but their reservation is not complete)
     }
     @computed get completedTables() {
         //calculate the number of tables that have been completed
     }
     @action addRes = (name, numPeople) => {
         this.reservations.push(new Reservation(name, numPeople))
+    }
+    @action seatRes = (id) => {
+        //find the reservation and change its seated value to true
     }
     @action completeRes = (id) => {
         //find the reservation and mark it as completed

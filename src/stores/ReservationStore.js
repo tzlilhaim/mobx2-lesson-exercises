@@ -7,6 +7,7 @@ export class Reservation {
     //giving a random short string ID
     @observable numPeople
     @observable completed = false
+    @observable seated = false
     constructor(name, numPeople) {
         this.name = name
         this.numPeople = numPeople

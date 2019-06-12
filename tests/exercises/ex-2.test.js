@@ -21,7 +21,7 @@ describe("exercise2", () => {
         generalStore = new GeneralStore()
     });
     it('the number of people in the restaurant should be rendered', () => {
-        restaurantStore.reservations.find(r => r.name ==="Bernard").completed = true
+        restaurantStore.reservations.find(r => r.name ==="Bernard").seated = true
         const wrapper = shallow(<Restaurant.wrappedComponent RestaurantStore={restaurantStore}/>)
         expect(wrapper.text(), 
             "You should display a div with the computed restPopulation")
