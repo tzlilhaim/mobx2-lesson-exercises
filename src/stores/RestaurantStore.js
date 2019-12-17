@@ -7,10 +7,10 @@ export class RestaurantStore {
     @observable numTables = 10
     @computed get totalReservations() { //automatically calculates the total reservations
         return this.reservations.length
-    } 
+    }
     @computed get openTables() { //automatically caluclates the number of tables avalible, only when the state is affected
         let counter = 0
-        this.reservations.forEach(r => r.completed ? counter ++: null)
+        this.reservations.forEach(r => r.seated ? counter ++: null)
         return (this.numTables - counter)
     }
     @computed get restPopulation() {
